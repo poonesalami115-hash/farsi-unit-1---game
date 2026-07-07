@@ -1,0 +1,149 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:tahoma,sans-serif;
+}
+body{
+background:#dff6ff;
+display:flex;
+justify-content:center;
+padding:20px;
+}
+#game{
+width:100%;
+max-width:700px;
+background:#fff;
+border-radius:20px;
+padding:20px;
+box-shadow:0 0 15px #999;
+}
+header{
+text-align:center;
+margin-bottom:20px;
+}
+header h1{
+color:#1565c0;
+}
+header h2{
+color:#2e7d32;
+font-size:20px;
+margin:10px 0;
+}
+header p{
+color:#555;
+}
+.hide{
+display:none;
+}
+.owl{
+font-size:90px;
+text-align:center;
+animation:fly 2s infinite;
+}
+@keyframes fly{
+0%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0);}
+}
+#startPage{
+text-align:center;
+}
+#playerName{
+width:100%;
+padding:12px;
+font-size:18px;
+margin:15px 0;
+border:2px solid #2196f3;
+border-radius:10px;
+}
+button{
+background:#43a047;
+color:#fff;
+border:none;
+padding:12px 22px;
+font-size:18px;
+border-radius:12px;
+cursor:pointer;
+}
+button:hover{
+background:#2e7d32;
+}
+.topBar{
+display:flex;
+justify-content:space-between;
+font-size:20px;
+font-weight:bold;
+margin:20px 0;
+}
+.progress{
+height:18px;
+background:#ddd;
+border-radius:15px;
+overflow:hidden;
+margin-bottom:20px;
+}
+#bar{
+height:100%;
+width:0%;
+background:#4caf50;
+transition:.5s;
+}
+#question{
+background:#fff8c4;
+padding:18px;
+border-radius:12px;
+font-size:22px;
+margin-bottom:20px;
+text-align:center;
+}
+#answers{
+display:grid;
+gap:12px;
+}
+.answer{
+background:#2196f3;
+color:#fff;
+padding:14px;
+border-radius:12px;
+text-align:center;
+cursor:pointer;
+transition:.3s;
+}
+.answer:hover{
+background:#1565c0;
+transform:scale(1.03);
+}
+#finishPage{
+text-align:center;
+padding:20px;
+}
+#finishPage h1{
+color:#ff9800;
+margin-bottom:20px;
+}
+#result{
+font-size:24px;
+margin:20px 0;
+color:#2e7d32;
+}
+@media(max-width:600px){
+#game{
+padding:15px;
+}
+header h1{
+font-size:26px;
+}
+header h2{
+font-size:18px;
+}
+#question{
+font-size:18px;
+}
+.answer{
+font-size:16px;
+}
+button{
+width:100%;
+}
+}
