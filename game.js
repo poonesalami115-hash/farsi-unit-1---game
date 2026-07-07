@@ -74,6 +74,30 @@ function checkAnswer(n){
 
 if(n===questions[i].c){
 
+alert("✅ آفرین! پاسخ درست است.");
+
+score+=5;
+
+scoreBox.innerHTML=score;
+
+}else{
+
+alert("❌ پاسخ نادرست است.");
+
+life--;
+
+lifeBox.innerHTML=life;
+
+if(life<=0){
+
+endGame(false);
+
+return;
+
+}
+
+}
+
 score+=5;
 
 scoreBox.innerHTML=score;
