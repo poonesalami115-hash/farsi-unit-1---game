@@ -20,6 +20,7 @@ const lifeBox=document.getElementById("life");
 
 const result=document.getElementById("result");
 
+const message=document.getElementById("message");
 const bar=document.getElementById("bar");
 
 startBtn.onclick=startGame;
@@ -71,6 +72,60 @@ answers.appendChild(btn);
 
 }
 function checkAnswer(n){
+
+let ok=(n===questions[i].c);
+
+if(ok){
+
+score+=5;
+scoreBox.innerHTML=score;
+
+message.className="correct";
+message.innerHTML="🦉 آفرین! پاسخ درست بود.";
+
+}else{
+
+life--;
+lifeBox.innerHTML=life;
+
+message.className="wrong";
+message.innerHTML="🦉 اشکالی ندارد، پاسخ درست را پیدا می‌کنیم.";
+
+if(life<=0){
+
+setTimeout(function(){
+
+endGame(false);
+
+},1000);
+
+return;
+
+}
+
+}
+
+message.style.display="block";
+
+setTimeout(function(){
+
+message.style.display="none";
+
+i++;
+
+if(i>=questions.length){
+
+endGame(true);
+
+}else{
+
+showQuestion();
+
+}
+
+},1200);
+
+}
 
 if(n===questions[i].c){
 
