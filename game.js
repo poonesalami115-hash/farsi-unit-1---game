@@ -13,9 +13,12 @@ const question=document.getElementById("question");
 const answers=document.getElementById("answers");
 const message=document.getElementById("message");
 
-const scoreBox=document.getElementById("score");
-const lifeBox=document.getElementById("life");
-const result=document.getElementById("result");
+const
+ scoreBox.textContent=score;
+lifeBox.textContent=life;
+result.innerHTML="";
+message.style.display="none";
+bar.style.width="0%";
 const bar=document.getElementById("bar");
 const correctSound=new Audio("correct.mp3");
 const wrongSound=new Audio("wrong.mp3");
