@@ -1,7 +1,8 @@
 let i=0;
 let score=0;
 let life=3;
-
+bar.style.width="0%";
+result.innerHTML="";
 const startPage=document.getElementById("startPage");
 const quizPage=document.getElementById("quizPage");
 const finishPage=document.getElementById("finishPage");
