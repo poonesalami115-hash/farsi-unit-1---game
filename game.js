@@ -35,7 +35,8 @@ life=3;
 scoreBox.textContent=score;
 lifeBox.textContent=life;
 bar.style.width="0%";
-
+message.style.display="none";
+result.innerHTML="";
 startPage.classList.add("hide");
 finishPage.classList.add("hide");
 quizPage.classList.remove("hide");
