@@ -92,7 +92,7 @@ if(correct){
 score+=5;
  
 correctSound.currentTime=0;
-correctSound.play();
+correctSound.play().catch(()=>{});
 scoreBox.textContent=score;
 
 message.className="correct";
@@ -103,7 +103,7 @@ message.textContent="✅ آفرین! پاسخ درست بود.";
 
 life--;
 wrongSound.currentTime=0;
-wrongSound.play(); 
+wrongSound.play().catch(()=>{});
 
 lifeBox.textContent=life;
 
