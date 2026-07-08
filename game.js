@@ -17,7 +17,8 @@ const scoreBox=document.getElementById("score");
 const lifeBox=document.getElementById("life");
 const result=document.getElementById("result");
 const bar=document.getElementById("bar");
-
+const correctSound=new Audio("correct.mp3");
+const wrongSound=new Audio("wrong.mp3");
 startBtn.addEventListener("click",startGame);
 
 function startGame(){
@@ -89,7 +90,9 @@ btn.disabled=true;
 if(correct){
 
 score+=5;
-
+ 
+correctSound.currentTime=0;
+correctSound.play();
 scoreBox.textContent=score;
 
 message.className="correct";
@@ -99,6 +102,8 @@ message.textContent="✅ آفرین! پاسخ درست بود.";
 }else{
 
 life--;
+wrongSound.currentTime=0;
+wrongSound.play(); 
 
 lifeBox.textContent=life;
 
