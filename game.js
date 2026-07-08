@@ -13,17 +13,15 @@ const question=document.getElementById("question");
 const answers=document.getElementById("answers");
 const message=document.getElementById("message");
 
-const
- scoreBox.textContent=score;
-lifeBox.textContent=life;
-result.innerHTML="";
-message.style.display="none";
-bar.style.width="0%";
+const scoreBox=document.getElementById("score");
+const lifeBox=document.getElementById("life");
+const result=document.getElementById("result");
 const bar=document.getElementById("bar");
+
 const correctSound=new Audio("correct.mp3");
 const wrongSound=new Audio("wrong.mp3");
-startBtn.addEventListener("click",startGame);
 
+startBtn.onclick=startGame;
 function startGame(){
 
 if(playerName.value.trim()==""){
@@ -37,9 +35,12 @@ life=3;
 
 scoreBox.textContent=score;
 lifeBox.textContent=life;
-bar.style.width="0%";
-message.style.display="none";
+
 result.innerHTML="";
+message.style.display="none";
+
+bar.style.width="0%";
+
 startPage.classList.add("hide");
 finishPage.classList.add("hide");
 quizPage.classList.remove("hide");
@@ -78,7 +79,6 @@ answers.appendChild(btn);
 });
 
 }
-
 function checkAnswer(index){
 
 const correct=(index===questions[i].c);
@@ -86,38 +86,35 @@ const correct=(index===questions[i].c);
 const buttons=document.querySelectorAll(".answer");
 
 buttons.forEach(function(btn){
-
 btn.disabled=true;
-
 });
 
 if(correct){
 
 score+=5;
- 
-correctSound.currentTime=0;
-correctSound.play().catch(()=>{});
 scoreBox.textContent=score;
 
-message.className="correct";
+correctSound.currentTime=0;
+correctSound.play().catch(()=>{});
 
+message.className="correct";
 message.textContent="✅ آفرین! پاسخ درست بود.";
 
 }else{
 
 life--;
+lifeBox.textContent=life;
+
 wrongSound.currentTime=0;
 wrongSound.play().catch(()=>{});
 
-lifeBox.textContent=life;
-
 message.className="wrong";
-
 message.textContent="❌ پاسخ نادرست بود.";
 
 }
 
 message.style.display="block";
+
 setTimeout(function(){
 
 message.style.display="none";
@@ -127,7 +124,6 @@ i++;
 if(life<=0){
 
 endGame(false);
-
 return;
 
 }
@@ -145,7 +141,6 @@ showQuestion();
 },1200);
 
 }
-
 function endGame(win){
 
 quizPage.classList.add("hide");
@@ -156,20 +151,17 @@ bar.style.width="100%";
 let medal="🥉 مدال برنز";
 
 if(score>=90){
-
 medal="🥇 مدال طلا";
-
 }else if(score>=70){
-
 medal="🥈 مدال نقره";
-
 }
 
 if(win){
 
 result.innerHTML=
 "🎉 آفرین <b>"+playerName.value+
-"</b><br><br>⭐ امتیاز: "+score+
+"</b><br><br>"+
+"⭐ امتیاز: "+score+
 "<br>"+medal+
 "<br><br>👩‍🏫 آموزگار: پونه سلامی";
 
