@@ -2,11 +2,10 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>مأموریت جغد دانا</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div id="game">
@@ -18,12 +17,7 @@
 </header>
 
 <section id="startPage">
-
 <div class="owl">🦉</div>
-
-<h2>به بازی خوش آمدی</h2>
-
-<p>نام خود را وارد کن.</p>
 
 <input
 id="playerName"
@@ -33,7 +27,6 @@ placeholder="نام دانش‌آموز">
 <button id="startBtn">
 شروع بازی
 </button>
-
 </section>
 
 <section id="quizPage" class="hide">
@@ -41,13 +34,11 @@ placeholder="نام دانش‌آموز">
 <div class="topBar">
 
 <div>
-⭐ امتیاز:
-<span id="score">0</span>
+⭐ <span id="score">0</span>
 </div>
 
 <div>
-❤️ جان:
-<span id="life">3</span>
+❤️ <span id="life">3</span>
 </div>
 
 </div>
@@ -59,18 +50,19 @@ placeholder="نام دانش‌آموز">
 <h2 id="question"></h2>
 
 <div id="answers"></div>
+
 <div id="message"></div>
 
 </section>
 
 <section id="finishPage" class="hide">
 
-<h1>🏆 تبریک</h1>
+<h1>🏆 پایان بازی</h1>
 
 <p id="result"></p>
 
 <button onclick="location.reload()">
-🔄 بازی دوباره
+بازی دوباره
 </button>
 
 </section>
