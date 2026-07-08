@@ -43,8 +43,9 @@ quizPage.classList.remove("hide");
 
 showQuestion();
 
-}
-function showQuestion(){
+}function showQuestion(){
+
+alert("showQuestion اجرا شد");
 
 bar.style.width=((i/questions.length)*100)+"%";
 
