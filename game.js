@@ -18,8 +18,8 @@ const lifeBox=document.getElementById("life");
 const result=document.getElementById("result");
 const bar=document.getElementById("bar");
 
-const correctSound=new Audio("correct.mp3");
-const wrongSound=new Audio("wrong.mp3");
+const correctSound=new Audio("correct.m4a");
+const wrongSound=new Audio("wrong.m4a");
 
 startBtn.onclick=startGame;
 function startGame(){
