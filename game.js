@@ -43,10 +43,8 @@ const today=new Date().toLocaleDateString("fa-IR");
 const key="quiz_"+code;
 
 if(localStorage.getItem(key)==today){
-
 alert("شما امروز این آزمون را انجام داده‌اید.");
 return;
-
 }
 
 i=0;
@@ -101,8 +99,12 @@ function checkAnswer(index){
 
 const correct=(index===questions[i].c);
 
-document.querySelectorAll(".answer").forEach(function(btn){
+const buttons=document.querySelectorAll(".answer");
+
+buttons.forEach(function(btn){
+
 btn.disabled=true;
+
 });
 
 if(correct){
@@ -127,7 +129,7 @@ i++;
 
 if(i>=questions.length){
 
-endGame(true);
+endGame();
 
 }else{
 
@@ -166,7 +168,7 @@ i++;
 
 if(i>=questions.length){
 
-endGame(true);
+endGame();
 
 }else{
 
@@ -179,7 +181,7 @@ showQuestion();
 }
 
 }
-function endGame(win){
+function endGame(){
 
 const today=new Date().toLocaleDateString("fa-IR");
 const code=playerCode.value.trim();
@@ -200,14 +202,18 @@ medal="🥈 مدال نقره";
 }
 
 result.innerHTML=
-"🎉 آفرین <b>"+playerName.value+
-"</b><br><br>"+
-"🆔 کد ملی: "+playerCode.value+
+"🏆 پایان آزمون<br><br>"+
+"👤 <b>"+playerName.value+"</b><br><br>"+
+"🆔 کد ملی: "+code+
 "<br><br>"+
-"⭐ امتیاز نهایی: "+score+
-"<br>"+medal+
-"<br><br>📅 تاریخ: "+today+
-"<br><br>📸 لطفاً از این صفحه اسکرین‌شات بگیرید و برای آموزگار ارسال کنید."+
-"<br><br>👩‍🏫 آموزگار: پونه سلامی";
+"⭐ امتیاز نهایی: "+score+" از "+(questions.length*5)+
+"<br><br>"+
+medal+
+"<br><br>"+
+"📅 تاریخ: "+today+
+"<br><br>"+
+"📸 لطفاً از این صفحه اسکرین‌شات بگیرید و برای آموزگار ارسال کنید."+
+"<br><br>"+
+"👩‍🏫 آموزگار: پونه سلامی";
 
 }
